@@ -2,7 +2,7 @@
 
 A modern, responsive developer portfolio built with **React + Vite + Tailwind CSS**, featuring smooth animations, project showcases, and a fully functional contact form.
 
-🔗 **Live Demo:**(https://amolraut.vercel.app/)
+🔗 **Live Demo:** https://amolraut.vercel.app
 
 ---
 
