@@ -36,7 +36,6 @@ my-portfolio/
 ├── public/
 ├── src/
 │   ├── components/
-│   ├── assets/
 │   └── App.jsx
 ├── index.html
 ├── tailwind.config.js
@@ -104,10 +103,10 @@ I'm a Full Stack Developer specializing in the **MERN stack**, passionate about 
 
 **Connect with me:**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin)](https://linkedin.com/in/your-profile)
-[![GitHub](https://img.shields.io/badge/GitHub-black?style=flat&logo=github)](https://github.com/your-username)
-[![LeetCode](https://img.shields.io/badge/LeetCode-orange?style=flat&logo=leetcode)](https://leetcode.com/your-profile)
-[![Email](https://img.shields.io/badge/Email-red?style=flat&logo=gmail)](mailto:your-email@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/amolraut9272)
+[![GitHub](https://img.shields.io/badge/GitHub-black?style=flat&logo=github)](https://github.com/Amolraut638)
+[![LeetCode](https://img.shields.io/badge/LeetCode-orange?style=flat&logo=leetcode)](https://leetcode.com/u/Amolraut638/)
+[![Email](https://img.shields.io/badge/Email-red?style=flat&logo=gmail)](mailto:amolraut1902@gmail.com)
 
 ---
 
