@@ -41,7 +41,7 @@ function Navbar() {
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-darkBg/80 backdrop-blur-md border-b border-gray-800"
+          ? "bg-darkBg/80 backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
@@ -87,7 +87,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-darkBg border-t border-gray-800 transition-all duration-300 ${
+        className={`md:hidden bg-darkBg transition-all duration-300 ${
           menuOpen ? "max-h-screen py-4" : "max-h-0 overflow-hidden"
         }`}
       >

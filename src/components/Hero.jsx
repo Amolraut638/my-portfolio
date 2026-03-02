@@ -1,15 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SiLeetcode } from "react-icons/si";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { TiDocumentText } from "react-icons/ti";
-import { TypeAnimation } from "react-type-animation";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+
+const phrases = [
+  "modern web applications.",
+  "scalable backend systems.",
+  "MERN stack projects.",
+  "efficient C++ solutions.",
+];
+
+function RotatingText() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % phrases.length);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.span
+        key={phrases[index]}
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -15 }}
+        transition={{ duration: 0.4 }}
+        className="text-primary font-medium"
+      >
+        {phrases[index]}
+      </motion.span>
+    </AnimatePresence>
+  );
+}
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen bg-darkBg flex items-center"
+      className="min-h-[calc(100vh-80px)] bg-darkBg flex items-center pt-20"
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full">
         <div className="flex flex-col md:flex-row items-center justify-between gap-16">
@@ -30,24 +63,8 @@ export default function Hero() {
             </h1>
 
             <div className="text-mutedText text-xl sm:text-2xl mb-8 flex flex-col sm:flex-row items-center md:items-start gap-2">
-              <span>I'm a</span>
-              <TypeAnimation
-                sequence={[
-                  "passionate Engineer.",
-                  2500,
-                  "Full Stack Developer.",
-                  2500,
-                  "MERN Developer.",
-                  2500,
-                  "Backend Enthusiast.",
-                  2500,
-                  "C++ Developer.",
-                  2500,
-                ]}
-                speed={40}
-                repeat={Infinity}
-                className="text-primary font-medium"
-              />
+              <span>I build</span>
+              <RotatingText />
             </div>
 
             {/* Buttons */}
@@ -94,7 +111,7 @@ export default function Hero() {
                   alt="TakeUforward"
                   className="w-5 h-5 object-contain"
                 />
-                <span>TakeUforward</span>
+                <span>takeUforward</span>
               </a>
 
               <a
@@ -123,6 +140,7 @@ export default function Hero() {
               className="w-60 sm:w-80 md:w-96 rounded-2xl border border-gray-800 shadow-xl hover:scale-105 transition duration-500"
             />
           </motion.div>
+
         </div>
       </div>
     </section>
