@@ -115,7 +115,7 @@ export default function Hero() {
               </a>
 
               <a
-                href="https://drive.google.com/file/d/1oqhSQ6avK6C-OqAL3xbqgIuhb24g-XSz/view?usp=sharing"
+                href="https://drive.google.com/file/d/1TxuBqhGoetCeQtEIkmRT7O9ZkV-X1EZs/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 px-5 py-3 bg-primary text-white rounded-lg hover:bg-accent transition duration-300 shadow-glow"
