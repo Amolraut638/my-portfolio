@@ -3,6 +3,25 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const projects = [
+
+    {
+    name: "DsaMentor.ai",
+    image: "/dsamentor.png",
+    description: "Built a purpose-built DSA and LeetCode mentor chatbot that teaches instead of just answering. The bot runs in two modes — concept mode explains topics with code examples and complexity analysis, while mentor mode guides users through LeetCode problems with progressive hints without giving direct answers. Designed a premium dark UI with glassmorphism effects, syntax-highlighted code blocks, and thoughtful UX states including loading, error, and empty states. Integrated Groq LLM API on a Node.js backend, deployed frontend and backend independently on Vercel, and implemented chat persistence via localStorage.",
+    github: "https://github.com/Amolraut638/dsa-mentor-ai",
+    live: "https://dsa-mentor-ai-amolraut638.vercel.ap",
+    tech: ["React.js", "Node.js", "Express.js", "Groq AI", "REST API", "Vercel"],
+    },
+
+    {
+    name: "My Portfolio Website",
+    image: "/portfolio.png",
+    description: "Built a modern, responsive developer portfolio to showcase my projects, technical skills, and experience with a focus on clean UI/UX and performance. The application features smooth animations, dynamic sections, and a fully responsive design optimized for all devices. The project highlights my frontend expertise along with attention to detail and design consistency.",
+    github: "https://github.com/Amolraut638/my-portfolio",
+    live: "https://amolraut.vercel.app",
+    tech: ["React.js", "Tailwind CSS"],
+    },
+
   {
     name: "Resume-Builder",
     image: "/resumeBuilder.png",
@@ -11,22 +30,7 @@ const projects = [
     live: "https://resume-builder-amol-raut.vercel.app",
     tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
   },
-  {
-    name: "QuickBlog",
-    image: "/QuickBlog.png",
-    description: "QuickBlog is a Full Stack modern blogging platform designed for fast content sharing with a clean UI and responsive design. Built using MERN Stack, it offers an intuitive way for users to create, read, and manage blog posts with ease.",
-    github: "https://github.com/Amolraut638/QuickBlog",
-    live: "https://quick-blog-638.vercel.app",
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "JWT"],
-  },
-  {
-    name: "Prescripto",
-    image: "/prescripto.jpg",
-    description: "Prescripto is a full-stack doctor appointment booking system developed from scratch. It facilitates seamless interactions between patients, doctors, and administrators, ensuring efficient appointment scheduling and management.",
-    github: "https://github.com/Amolraut638/Prescripto",
-    live: "https://github.com/Amolraut638/Prescripto",
-    tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Gemini API", "Razorpay API"],
-  },
+
     {
     name: "URL-Shortener",
     image: "/url-shortener.png",
@@ -35,6 +39,25 @@ const projects = [
     live: "https://github.com/Amolraut638/url-shortener",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Base62 encoding"],
   },
+
+  {
+    name: "QuickBlog",
+    image: "/QuickBlog.png",
+    description: "QuickBlog is a Full Stack modern blogging platform designed for fast content sharing with a clean UI and responsive design. Built using MERN Stack, it offers an intuitive way for users to create, read, and manage blog posts with ease.",
+    github: "https://github.com/Amolraut638/QuickBlog",
+    live: "https://quick-blog-638.vercel.app",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Gemini API", "JWT"],
+  },
+
+  {
+    name: "Prescripto",
+    image: "/prescripto.jpg",
+    description: "Prescripto is a full-stack doctor appointment booking system developed from scratch. It facilitates seamless interactions between patients, doctors, and administrators, ensuring efficient appointment scheduling and management.",
+    github: "https://github.com/Amolraut638/Prescripto",
+    live: "https://github.com/Amolraut638/Prescripto",
+    tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Gemini API", "Razorpay API"],
+  },
+
     {
     name: "Bank Management System",
     image: "/bankManagement.png",
@@ -43,6 +66,16 @@ const projects = [
     live: "https://github.com/Amolraut638/BankManagementSystem",
     tech: ["C++", "OOP", "STL"],
   },
+
+    {
+    name: "AI Movie Insight Builder",
+    image: "/movieInsight.png",
+    description: "Built an AI-powered movie insight web application that fetches detailed movie data using IMDb IDs and enhances it with sentiment analysis. The platform integrates TMDB API for rich metadata and Groq AI for generating audience sentiment summaries. Designed a responsive full-stack solution using Next.js, ensuring seamless user experience and efficient API handling. Focused on clean architecture, fast performance, and real-time AI-driven insights.",
+    github: "https://github.com/Amolraut638/ai-movie-insight-builder",
+    live: "https://ai-movie-insight-builder-tau.vercel.app",
+    tech: ["Next.js", "React", "Tailwind CSS", "TMDB API", "Groq AI API"],
+  },
+
 ];
 
 const fadeUp = {
