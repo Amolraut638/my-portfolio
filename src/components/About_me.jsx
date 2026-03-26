@@ -44,7 +44,11 @@ function AboutMe() {
 
           <div className="space-y-6 text-mutedText text-base md:text-lg leading-relaxed">
             <p>
-              I am currently pursuing a B.E. in Electronics and Telecommunication Engineering (2026 batch), with a strong inclination toward backend and full-stack development. Despite coming from an ENTC background, I have built solid expertise in software engineering through consistent hands-on practice and real-world projects.
+              I am currently pursuing a B.E. in Electronics and Telecommunication
+              Engineering (2026 batch), with a strong inclination toward backend and
+              full-stack development. Despite coming from an ENTC background, I have
+              built solid expertise in software engineering through consistent
+              hands-on practice and real-world projects.
             </p>
 
             <p>
@@ -56,43 +60,57 @@ function AboutMe() {
             </p>
 
             <p>
-              I have solved over <span className="text-lightText font-medium">200+ DSA problems</span> across multiple coding
-              platforms, which has significantly strengthened my analytical thinking,
-              debugging skills, and ability to design efficient solutions.
+              I have solved over{" "}
+              <span className="text-lightText font-medium">200+ DSA problems</span>{" "}
+              across multiple coding platforms, which has significantly strengthened
+              my analytical thinking, debugging skills, and ability to design
+              efficient solutions.
             </p>
 
-            <p>
-              Some of my notable projects include:
-            </p>
+            <p>Some of my notable projects include:</p>
 
             <ul className="list-disc list-inside space-y-2">
               <li>
-                <span className="text-lightText font-medium">
-                  QuickBlog
-                </span>{" "}
-                – An AI-powered blogging platform with JWT authentication, role-based
-                access, and Google Gemini integration for automated content generation.
+                <span className="text-lightText font-medium">DsaMentor.ai</span>{" "}
+                - A purpose-built AI-powered DSA and LeetCode mentor chatbot with a
+                dual-mode system prompt. Concept mode teaches topics with code and
+                complexity analysis, while mentor mode guides users through problems
+                with progressive hints instead of direct answers. Built with React,
+                Node.js, and Groq LLM API.
               </li>
               <li>
                 <span className="text-lightText font-medium">
-                  ZipURL
+                  AI Movie Insight Builder
                 </span>{" "}
-                – A scalable URL shortener using Base62 encoding, PostgreSQL, and Redis
-                caching for optimized redirect performance.
+                - A full-stack AI-powered movie insight platform integrating TMDB API
+                for rich metadata and Groq AI for real-time audience sentiment
+                analysis. Built with Next.js for clean architecture and fast
+                performance.
               </li>
               <li>
-                <span className="text-lightText font-medium">
-                  Prescripto
-                </span>{" "}
-                – A MERN-based doctor appointment booking system with secure
-                authentication and structured backend workflows.
+                <span className="text-lightText font-medium">Resume Builder</span>{" "}
+                - An intelligent web application that helps users generate
+                ATS-friendly resumes instantly using AI and job description matching.
+              </li>
+              <li>
+                <span className="text-lightText font-medium">ZipURL</span>{" "}
+                - A scalable URL shortener using Base62 encoding, PostgreSQL, and
+                Redis caching for optimized redirect performance.
+              </li>
+            
+              <li>
+                <span className="text-lightText font-medium">QuickBlog</span>{" "}
+                - An AI-powered blogging platform with JWT authentication, role-based
+                access, and Google Gemini integration for automated content
+                generation.
               </li>
             </ul>
 
             <p>
-              I am particularly interested in backend engineering, cloud fundamentals,
-              and building AI-assisted systems that solve real-world problems. I focus
-              on writing production-ready code and continuously improving my system-level thinking.
+              I am particularly interested in backend engineering, AI-assisted
+              systems, and building products that solve real-world problems. I focus
+              on writing production-ready code and continuously improving my
+              system-level thinking.
             </p>
 
             <p className="text-primary font-medium text-lg">
