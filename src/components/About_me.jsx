@@ -39,7 +39,7 @@ export default function AboutMe() {
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
 
-        {/* Heading */}
+        {/* Heading with added horizontal line */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
@@ -54,6 +54,8 @@ export default function AboutMe() {
               Me
             </span>
           </h2>
+          {/* Decorative Horizontal Line matching the Skills/Journey style */}
+          <div className="h-1.5 w-12 bg-primary mx-auto mt-4 rounded-full opacity-40" />
         </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-12 items-start">
@@ -70,9 +72,11 @@ export default function AboutMe() {
             {focusAreas.map((item, i) => (
               <div
                 key={i}
-                className="p-6 bg-darkCard border border-gray-800 rounded-2xl hover:border-primary/40 transition duration-300"
+                className="p-6 bg-darkCard border border-gray-800 rounded-2xl hover:border-primary/40 transition duration-300 group"
               >
-                <div className="text-2xl mb-3">{item.icon}</div>
+                <div className="text-2xl mb-3 group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
+                </div>
                 <h4 className="text-lg font-semibold text-lightText">
                   {item.title}
                 </h4>
@@ -128,7 +132,7 @@ export default function AboutMe() {
                   </ul>
                 </div>
 
-                <p className="text-primary font-medium pt-4">
+                <p className="text-primary font-medium pt-4 border-t border-gray-800/60 mt-4">
                   "Build scalable systems. Think long-term. Improve daily."
                 </p>
 
