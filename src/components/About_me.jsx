@@ -2,8 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaServer, FaDatabase, FaBrain, FaRobot } from "react-icons/fa";
 
+// Professional vertical reveal animation (no side-sliding)
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
 
@@ -59,16 +60,17 @@ export default function AboutMe() {
 
           {/* LEFT - Focus Areas */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
             className="lg:col-span-5 grid grid-cols-2 gap-4"
           >
             {focusAreas.map((item, i) => (
               <div
                 key={i}
-                className="p-6 bg-darkCard border border-gray-800 rounded-2xl hover:border-primary/40 transition"
+                className="p-6 bg-darkCard border border-gray-800 rounded-2xl hover:border-primary/40 transition duration-300"
               >
                 <div className="text-2xl mb-3">{item.icon}</div>
                 <h4 className="text-lg font-semibold text-lightText">
@@ -81,11 +83,12 @@ export default function AboutMe() {
             ))}
           </motion.div>
 
-          {/* RIGHT - Content */}
+          {/* RIGHT - Content (Original Text Maintained) */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
             className="lg:col-span-7"
           >
@@ -110,7 +113,7 @@ export default function AboutMe() {
                   I focus on writing clean, maintainable code and thinking in terms of system design rather than just implementation.
                 </p>
 
-                {/* Project Highlights */}
+                {/* Project Highlights (Original Text) */}
                 <div className="pt-4">
                   <p className="text-lightText font-medium mb-2">
                     Some things I’ve built:
@@ -121,6 +124,7 @@ export default function AboutMe() {
                     <li>• Movie insight platform with real-time sentiment analysis</li>
                     <li>• ATS-friendly resume generator using AI</li>
                     <li>• Scalable URL shortener with caching & encoding</li>
+                    <li>• QuickBlog - AI-powered blogging platform</li>
                   </ul>
                 </div>
 
