@@ -1,12 +1,36 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaServer, FaDatabase, FaBrain, FaRobot } from "react-icons/fa";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0 },
 };
 
-function AboutMe() {
+const focusAreas = [
+  {
+    title: "Backend Engineering",
+    desc: "Designing scalable APIs & systems",
+    icon: <FaServer className="text-primary" />,
+  },
+  {
+    title: "Database Design",
+    desc: "Efficient schema & data handling",
+    icon: <FaDatabase className="text-accent" />,
+  },
+  {
+    title: "Problem Solving",
+    desc: "Strong DSA & logical thinking",
+    icon: <FaBrain className="text-primary" />,
+  },
+  {
+    title: "AI Integration",
+    desc: "Building LLM-powered applications",
+    icon: <FaRobot className="text-accent" />,
+  },
+];
+
+export default function AboutMe() {
   return (
     <section
       id="about"
@@ -14,113 +38,102 @@ function AboutMe() {
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
 
-        {/* Section Title */}
-        <motion.h2
+        {/* Heading */}
+        <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-bold text-center mb-16"
+          className="text-center mb-16"
         >
-          About{" "}
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Me
-          </span>
-        </motion.h2>
-
-        {/* Content Card */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="bg-darkCard border border-gray-800 rounded-2xl p-8 md:p-12 shadow-lg hover:shadow-glow transition duration-300"
-        >
-          <h3 className="text-2xl md:text-3xl font-semibold mb-6">
-            Hi, I'm <span className="text-primary">Amol Raut</span>
-          </h3>
-
-          <div className="space-y-6 text-mutedText text-base md:text-lg leading-relaxed">
-            <p>
-              I am currently pursuing a B.E. in Electronics and Telecommunication
-              Engineering (2026 batch), with a strong inclination toward backend and
-              full-stack development. Despite coming from an ENTC background, I have
-              built solid expertise in software engineering through consistent
-              hands-on practice and real-world projects.
-            </p>
-
-            <p>
-              I am a backend-focused Full Stack Developer with strong foundations in
-              Data Structures, Algorithms, and system design fundamentals. I enjoy
-              designing scalable APIs, optimizing performance, and building clean,
-              maintainable backend architectures using Node.js, Express, MongoDB,
-              PostgreSQL, and Redis.
-            </p>
-
-            <p>
-              I have solved over{" "}
-              <span className="text-lightText font-medium">200+ DSA problems</span>{" "}
-              across multiple coding platforms, which has significantly strengthened
-              my analytical thinking, debugging skills, and ability to design
-              efficient solutions.
-            </p>
-
-            <p>Some of my notable projects include:</p>
-
-            <ul className="list-disc list-inside space-y-2">
-              <li>
-                <span className="text-lightText font-medium">DsaMentor.ai</span>{" "}
-                - A purpose-built AI-powered DSA and LeetCode mentor chatbot with a
-                dual-mode system prompt. Concept mode teaches topics with code and
-                complexity analysis, while mentor mode guides users through problems
-                with progressive hints instead of direct answers. Built with React,
-                Node.js, and Groq LLM API.
-              </li>
-              <li>
-                <span className="text-lightText font-medium">
-                  AI Movie Insight Builder
-                </span>{" "}
-                - A full-stack AI-powered movie insight platform integrating TMDB API
-                for rich metadata and Groq AI for real-time audience sentiment
-                analysis. Built with Next.js for clean architecture and fast
-                performance.
-              </li>
-              <li>
-                <span className="text-lightText font-medium">Resume Builder</span>{" "}
-                - An intelligent web application that helps users generate
-                ATS-friendly resumes instantly using AI and job description matching.
-              </li>
-              <li>
-                <span className="text-lightText font-medium">ZipURL</span>{" "}
-                - A scalable URL shortener using Base62 encoding, PostgreSQL, and
-                Redis caching for optimized redirect performance.
-              </li>
-            
-              <li>
-                <span className="text-lightText font-medium">QuickBlog</span>{" "}
-                - An AI-powered blogging platform with JWT authentication, role-based
-                access, and Google Gemini integration for automated content
-                generation.
-              </li>
-            </ul>
-
-            <p>
-              I am particularly interested in backend engineering, AI-assisted
-              systems, and building products that solve real-world problems. I focus
-              on writing production-ready code and continuously improving my
-              system-level thinking.
-            </p>
-
-            <p className="text-primary font-medium text-lg">
-              "Build scalable systems. Think long-term. Improve daily."
-            </p>
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold">
+            About{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Me
+            </span>
+          </h2>
         </motion.div>
+
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
+
+          {/* LEFT - Focus Areas */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="lg:col-span-5 grid grid-cols-2 gap-4"
+          >
+            {focusAreas.map((item, i) => (
+              <div
+                key={i}
+                className="p-6 bg-darkCard border border-gray-800 rounded-2xl hover:border-primary/40 transition"
+              >
+                <div className="text-2xl mb-3">{item.icon}</div>
+                <h4 className="text-lg font-semibold text-lightText">
+                  {item.title}
+                </h4>
+                <p className="text-sm text-mutedText">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </motion.div>
+
+          {/* RIGHT - Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="lg:col-span-7"
+          >
+            <div className="bg-darkCard border border-gray-800 rounded-2xl p-8 md:p-10">
+
+              <h3 className="text-2xl md:text-3xl font-semibold mb-6">
+                Backend-focused Developer building{" "}
+                <span className="text-primary">scalable systems</span>
+              </h3>
+
+              <div className="space-y-5 text-mutedText leading-relaxed">
+
+                <p>
+                  I’m currently pursuing a B.E. in Electronics and Telecommunication (2026), with a strong focus on backend and full-stack development. I’ve built my skills through hands-on projects and consistent problem solving.
+                </p>
+
+                <p>
+                  My primary interest lies in designing efficient APIs, managing structured data, and building systems that scale. I enjoy working with Node.js, databases like MongoDB and PostgreSQL, and optimizing performance using Redis.
+                </p>
+
+                <p>
+                  I focus on writing clean, maintainable code and thinking in terms of system design rather than just implementation.
+                </p>
+
+                {/* Project Highlights */}
+                <div className="pt-4">
+                  <p className="text-lightText font-medium mb-2">
+                    Some things I’ve built:
+                  </p>
+
+                  <ul className="space-y-2 text-sm">
+                    <li>• AI-powered DSA mentor with guided problem solving</li>
+                    <li>• Movie insight platform with real-time sentiment analysis</li>
+                    <li>• ATS-friendly resume generator using AI</li>
+                    <li>• Scalable URL shortener with caching & encoding</li>
+                  </ul>
+                </div>
+
+                <p className="text-primary font-medium pt-4">
+                  "Build scalable systems. Think long-term. Improve daily."
+                </p>
+
+              </div>
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );
 }
-
-export default AboutMe;
