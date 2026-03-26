@@ -11,9 +11,8 @@ export default function Footer() {
           
           {/* Left Side */}
           <p className="text-mutedText text-sm text-center md:text-left">
-            © {currentYear} Amol Raut. All rights reserved.
+            © {currentYear} Amol <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Raut</span>. All rights reserved.
           </p>
-
           {/* Social Links */}
           <div className="flex gap-6 text-mutedText text-sm">
             <a

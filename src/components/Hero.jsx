@@ -168,7 +168,7 @@ export default function Hero() {
               {/* Floating badge 2 */}
               <div className="absolute -top-4 -right-4 bg-darkCard border border-gray-800 rounded-xl px-4 py-2 shadow-lg">
                 <p className="text-xs text-mutedText">Projects Built</p>
-                <p className="text-lg font-bold text-primary">8+</p>
+                <p className="text-lg font-bold text-primary">6+</p>
               </div>
             </div>
           </motion.div>
