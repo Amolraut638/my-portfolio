@@ -50,10 +50,10 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto px-6 lg:px-8 w-full">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
 
-          {/* LEFT CONTENT */}
+          {/* LEFT CONTENT - Replaced x: -60 with y: 20 for a subtle lift */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="text-center md:text-left flex-1"
@@ -140,11 +140,11 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* RIGHT IMAGE */}
+          {/* RIGHT IMAGE - Removed x: 60 for a clean fade-in */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
             className="flex-1 flex justify-center md:justify-end"
           >

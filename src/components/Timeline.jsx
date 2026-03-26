@@ -1,21 +1,19 @@
 import React from "react";
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
 import { motion } from "framer-motion";
-import { GraduationCap, Briefcase } from "lucide-react";
+import { GraduationCap, Briefcase, Calendar } from "lucide-react";
 
 const educationData = [
   {
     year: "2022 - 2026",
     title: "B.E in Electronics and Telecommunication",
-    details: "Dr.D.Y.Patil Institute of Engineering Management and Research, Akurdi.",
+    details: "Dr. D.Y. Patil Institute of Engineering Management and Research, Akurdi.",
     description:
       "CGPA: 7.78 | Demonstrated strong engineering fundamentals and problem-solving ability through real-world project development.",
   },
   {
     year: "2019 - 2020",
     title: "HSC",
-    details: "R.B.Narayanrao Borawake College, Shrirampur.",
+    details: "R.B. Narayanrao Borawake College, Shrirampur.",
     description:
       "73.38% | Built a strong foundation in Physics, Chemistry and Mathematics.",
   },
@@ -30,115 +28,125 @@ const educationData = [
 
 const experienceData = [
   {
-    year: "Jan 2025",
+    year: "Jan 2025 - Present",
     title: "Backend Developer Intern",
     details: "AD Infocom Systems.",
     description:
-      "Worked on Blog Platform backend. Developed controllers, Authentication middlewares, REST API's for blog management and Admin Panel, written clear and readable code for better debugging.",
+      "Worked on Blog Platform backend. Developed controllers, Authentication middlewares, and REST APIs for blog management and Admin Panel. Wrote clear, maintainable code for efficient debugging.",
   },
-/*   {
-    year: "May 2024 - July 2024",
-    title: "Full Stack Developer Intern",
-    details: "Site Galleria",
-    description:
-      "Built LMS backend architecture and database schema. Contributed to frontend implementation.",
-  }, */
+
 ];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 40 },
+  hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0 },
 };
 
-function Timeline() {
+function JourneyCard({ item }) {
   return (
-    <section
-      id="journey"
-      className="py-24 bg-darkBg text-lightText scroll-mt-20"
-    >
+    <div className="relative pl-8 pb-12 last:pb-0 group">
+      {/* The Timeline Line */}
+      <div className="absolute left-[11px] top-0 h-full w-[2px] bg-gray-800 group-last:h-0" />
+      
+      {/* The Glowing Dot */}
+      <div className="absolute left-0 top-1.5 w-6 h-6 rounded-full bg-darkBg border-2 border-primary flex items-center justify-center z-10 transition-transform duration-300 shadow-[0_0_10px_rgba(99,102,241,0.3)]">
+        <div className="w-2 h-2 rounded-full bg-primary" />
+      </div>
+
+      <div className="bg-darkCard border border-gray-800 p-6 rounded-2xl hover:border-primary/40 transition-all duration-300 group-hover:shadow-glow">
+        {/* Date Label */}
+        <div className="flex items-center gap-2 text-mutedText text-xs font-medium mb-3 uppercase tracking-widest">
+          <Calendar size={14} className="text-primary" />
+          {item.year}
+        </div>
+        
+        {/* Title: The Role or Degree */}
+        <h4 className="text-xl font-bold text-lightText mb-2">
+          {item.title}
+        </h4>
+
+        {/* Visibility Fix: High-contrast Institution Name */}
+        <p className="text-indigo-400 font-semibold text-sm mb-4 tracking-wide">
+          {item.details}
+        </p>
+
+        {/* Description with a subtle top border for separation */}
+        <p className="text-mutedText text-sm leading-relaxed pt-4 border-t border-gray-800/60">
+          {item.description}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default function Timeline() {
+  return (
+    <section id="journey" className="py-24 bg-darkBg text-lightText scroll-mt-20 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         
         {/* Heading */}
-        <motion.h2
+        <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-20"
+          className="text-center mb-20"
         >
-          My{" "}
-          <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Journey
-          </span>
-        </motion.h2>
+          <h2 className="text-4xl md:text-5xl font-bold">
+            My <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Journey</span>
+          </h2>
+          <div className="h-1 w-20 bg-primary mx-auto mt-4 rounded-full opacity-50" />
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-16">
-          <TimelineSection
-            title="Education"
-            data={educationData}
-            icon={<GraduationCap size={20} />}
-          />
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          
+          {/* Experience Column */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <div className="flex items-center gap-3 mb-10 pl-2">
+              <div className="p-2 bg-primary/10 rounded-lg">
+                <Briefcase className="text-primary" size={24} />
+              </div>
+              <h3 className="text-2xl font-bold tracking-tight">Experience</h3>
+            </div>
+            
+            <div className="space-y-2">
+              {experienceData.map((item, index) => (
+                <JourneyCard key={index} item={item} />
+              ))}
+            </div>
+          </motion.div>
 
-          <TimelineSection
-            title="Experience"
-            data={experienceData}
-            icon={<Briefcase size={20} />}
-          />
+          {/* Education Column */}
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div className="flex items-center gap-3 mb-10 pl-2">
+              <div className="p-2 bg-accent/10 rounded-lg">
+                <GraduationCap className="text-accent" size={24} />
+              </div>
+              <h3 className="text-2xl font-bold tracking-tight">Education</h3>
+            </div>
+
+            <div className="space-y-2">
+              {educationData.map((item, index) => (
+                <JourneyCard key={index} item={item} />
+              ))}
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
   );
 }
-
-function TimelineSection({ title, data, icon }) {
-  return (
-    <div>
-      <h3 className="text-2xl font-semibold text-primary mb-8 text-center md:text-left">
-        {title}
-      </h3>
-
-      <VerticalTimeline
-        layout="1-column"
-        lineColor="#1F2937" // subtle gray line
-      >
-        {data.map((item, index) => (
-          <VerticalTimelineElement
-            key={index}
-            contentStyle={{
-              background: "#111827",
-              borderRadius: "12px",
-              border: "1px solid #1F2937",
-              boxShadow: "none",
-              padding: "1.5rem",
-            }}
-            contentArrowStyle={{
-              borderRight: "7px solid #111827",
-            }}
-            date={item.year}
-            dateClassName="text-mutedText"
-            iconStyle={{
-              background: "#6366F1",
-              color: "#fff",
-            }}
-            icon={icon}
-          >
-            <h4 className="text-lg font-semibold text-lightText mb-1">
-              {item.title}
-            </h4>
-
-            <p className="text-sm text-mutedText mb-2">
-              {item.details}
-            </p>
-
-            <p className="text-sm text-gray-400 leading-relaxed">
-              {item.description}
-            </p>
-          </VerticalTimelineElement>
-        ))}
-      </VerticalTimeline>
-    </div>
-  );
-}
-
-export default Timeline;
