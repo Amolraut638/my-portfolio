@@ -4,17 +4,22 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-darkBg border-t border-gray-800 mt-20">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 py-8">
-        
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          
+    <footer className="bg-darkBg border-t border-gray-800 mt-0 md:mt-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
+
           {/* Left Side */}
           <p className="text-mutedText text-sm text-center md:text-left">
-            © {currentYear} Amol <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Raut</span>. All rights reserved.
+            © {currentYear} Amol{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Raut
+            </span>. All rights reserved.
           </p>
+
           {/* Social Links */}
-          <div className="flex gap-6 text-mutedText text-sm">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-mutedText text-sm">
+
             <a
               href="https://github.com/Amolraut638"
               target="_blank"
@@ -50,6 +55,7 @@ export default function Footer() {
             >
               takeUforward
             </a>
+
           </div>
         </div>
       </div>

@@ -40,14 +40,12 @@ function Navbar() {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-darkBg/80 backdrop-blur-md"
-          : "bg-transparent"
+        scrolled ? "bg-darkBg/80 backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 lg:px-8">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          
+
           {/* Logo */}
           <Link to="hero" smooth duration={500}>
             <h1 className="text-xl md:text-2xl font-bold cursor-pointer">
@@ -59,7 +57,7 @@ function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             {navItems.map((item) => (
               <NavItem
                 key={item.to}
@@ -85,13 +83,13 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — flows naturally below navbar, no fixed positioning */}
       <div
-        className={`md:hidden bg-darkBg transition-all duration-300 ${
-          menuOpen ? "max-h-screen py-4" : "max-h-0 overflow-hidden"
+        className={`md:hidden bg-darkBg transition-all duration-300 overflow-hidden ${
+          menuOpen ? "max-h-screen py-6" : "max-h-0 py-0"
         }`}
       >
-        <div className="flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-6 px-4">
           {navItems.map((item) => (
             <MobileNavItem
               key={item.to}
@@ -111,15 +109,12 @@ function Navbar() {
   );
 }
 
-/* Desktop Nav Item */
 function NavItem({ name, to, isActive }) {
   return (
     <Link to={to} smooth duration={500}>
       <span
         className={`cursor-pointer text-sm font-medium transition duration-300 ${
-          isActive
-            ? "text-primary"
-            : "text-mutedText hover:text-lightText"
+          isActive ? "text-primary" : "text-mutedText hover:text-lightText"
         }`}
       >
         {name}
@@ -128,7 +123,6 @@ function NavItem({ name, to, isActive }) {
   );
 }
 
-/* Mobile Nav Item */
 function MobileNavItem({ name, to, onClick }) {
   return (
     <Link to={to} smooth duration={500} onClick={onClick}>

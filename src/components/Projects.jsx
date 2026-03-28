@@ -68,8 +68,8 @@ const fadeUp = {
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 bg-darkBg text-lightText scroll-mt-20">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
+    <section id="projects" className="py-16 md:py-24 bg-darkBg text-lightText scroll-mt-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
         <motion.div
@@ -78,16 +78,19 @@ export default function Projects() {
           whileInView="visible"
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">
-            Featured <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Projects</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+            Featured{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
           <div className="h-1.5 w-12 bg-primary mx-auto mt-4 rounded-full opacity-40" />
         </motion.div>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -96,10 +99,10 @@ export default function Projects() {
               whileInView="visible"
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-darkCard border border-gray-800 rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-300 hover:shadow-glow"
+              className="group bg-darkCard border border-gray-800 rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-300 hover:shadow-glow flex flex-col"
             >
-              {/* Image Container */}
-              <div className="relative h-52 overflow-hidden">
+              {/* Image */}
+              <div className="relative h-44 sm:h-48 md:h-52 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.name}
@@ -109,36 +112,37 @@ export default function Projects() {
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-lightText mb-3 group-hover:text-primary transition-colors">
+              <div className="p-4 sm:p-6 flex flex-col flex-1">
+                <h3 className="text-lg sm:text-2xl font-bold text-lightText mb-2 sm:mb-3 group-hover:text-primary transition-colors">
                   {project.name}
                 </h3>
 
-                <p className="text-mutedText text-sm leading-relaxed mb-6 h-12 line-clamp-2">
+                <p className="text-mutedText text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 line-clamp-2">
                   {project.description}
                 </p>
 
-                {/* Updated High-Visibility Tech Tags */}
-                <div className="flex flex-wrap gap-2 mb-8">
+                {/* Tech */}
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-8">
                   {project.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="text-[10px] uppercase tracking-wider font-bold px-3 py-1 bg-primary/10 border border-primary/20 rounded-md text-primary"
+                      className="text-[10px] uppercase tracking-wider font-bold px-2.5 sm:px-3 py-1 bg-primary/10 border border-primary/20 rounded-md text-primary"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-4">
+                {/* Buttons */}
+                <div className="flex gap-3 sm:gap-4 mt-auto">
+
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold border border-gray-700 rounded-xl hover:bg-gray-800 transition duration-300"
+                    className="flex-1 flex items-center justify-center gap-2 px-3 sm:px-4 py-2.5 text-xs sm:text-sm font-semibold border border-gray-700 rounded-xl hover:bg-gray-800 transition duration-300"
                   >
-                    <FaGithub size={16} />
+                    <FaGithub size={15} />
                     Code
                   </a>
 
@@ -146,11 +150,12 @@ export default function Projects() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold bg-primary text-white rounded-xl hover:bg-opacity-90 hover:shadow-glow transition duration-300"
+                    className="flex-1 flex items-center justify-center gap-2 px-3 sm:px-4 py-2.5 text-xs sm:text-sm font-semibold bg-primary text-white rounded-xl hover:bg-opacity-90 hover:shadow-glow transition duration-300"
                   >
-                    <FaExternalLinkAlt size={14} />
+                    <FaExternalLinkAlt size={13} />
                     Live Demo
                   </a>
+
                 </div>
               </div>
             </motion.div>
