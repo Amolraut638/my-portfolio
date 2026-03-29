@@ -41,147 +41,98 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-[calc(100vh-80px)] bg-darkBg flex items-center pt-20 overflow-hidden relative"
+      className="min-h-[calc(100vh-80px)] flex items-center justify-center pt-20 overflow-hidden relative"
     >
-      {/* Background glow — clamped so they don't cause horizontal scroll */}
-      <div className="absolute top-1/3 left-1/4 w-64 md:w-96 h-64 md:h-96 bg-primary opacity-5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/4 right-1/4 w-48 md:w-72 h-48 md:h-72 bg-accent opacity-5 rounded-full blur-3xl pointer-events-none" />
+      {/* Background Text */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+        <p className="text-[22vw] font-black text-lightText/[0.03] whitespace-nowrap">
+          AMOL RAUT
+        </p>
+      </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="flex flex-col items-center gap-5 sm:gap-6"
+        >
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs sm:text-sm font-medium">
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            Available for opportunities
+          </div>
 
-          {/* LEFT CONTENT */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center md:text-left flex-1 w-full"
-          >
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs sm:text-sm font-medium mb-6">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              Available for opportunities
+          {/* Name */}
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-lightText leading-none tracking-tight">
+            Amol{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Raut
+            </span>
+          </h1>
+
+          {/* Rotating Text */}
+          <div className="text-mutedText text-base sm:text-xl md:text-2xl flex flex-wrap justify-center items-center gap-2">
+            <span>I build</span>
+            <RotatingText />
+          </div>
+
+          {/* Description */}
+          <p className="text-mutedText text-xs sm:text-sm md:text-base leading-relaxed max-w-xs sm:max-w-md md:max-w-xl">
+            Backend-focused Full Stack Developer passionate about scalable APIs,
+            system design, and AI-assisted products.
+          </p>
+
+          {/* Stats */}
+          <div className="flex gap-6 sm:gap-8 md:gap-12 py-4 sm:py-5 border-y border-gray-800 w-full justify-center">
+            <div>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">200+</p>
+              <p className="text-[10px] sm:text-xs text-mutedText">Problems Solved</p>
             </div>
-
-            {/* Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-lightText leading-tight">
-              Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                Amol Raut
-              </span>
-            </h1>
-
-            {/* Rotating Text */}
-            <div className="text-mutedText text-lg sm:text-xl md:text-2xl mb-4 flex flex-col sm:flex-row items-center md:items-start gap-2">
-              <span>I build</span>
-              <RotatingText />
+            <div className="w-px bg-gray-800" />
+            <div>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">6+</p>
+              <p className="text-[10px] sm:text-xs text-mutedText">Projects Built</p>
             </div>
-
-            {/* Description */}
-            <p className="text-mutedText text-sm sm:text-base mb-8 max-w-md md:max-w-lg leading-relaxed mx-auto md:mx-0">
-              Backend-focused Full Stack Developer passionate about scalable APIs,
-              system design, and AI-assisted products. 200+ DSA problems solved.
-            </p>
-
-            {/* Buttons */}
-            {/* Buttons */}
-            <div className="flex flex-wrap justify-center md:justify-start gap-3">
-
-              <a
-                href="https://www.linkedin.com/in/amolraut9272"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-darkCard border border-gray-800 rounded-lg hover:shadow-glow hover:border-primary transition duration-300 text-xs sm:text-sm"
-              >
-                <FaLinkedin className="text-primary" />
-                LinkedIn
-              </a>
-
-              <a
-                href="https://github.com/Amolraut638"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-darkCard border border-gray-800 rounded-lg hover:shadow-glow hover:border-primary transition duration-300 text-xs sm:text-sm"
-              >
-                <FaGithub className="text-primary" />
-                GitHub
-              </a>
-
-              <a
-                href="https://leetcode.com/u/Amolraut638/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-darkCard border border-gray-800 rounded-lg hover:shadow-glow hover:border-primary transition duration-300 text-xs sm:text-sm"
-              >
-                <SiLeetcode className="text-primary" />
-                LeetCode
-              </a>
-
-              <a
-                href="https://takeuforward.org/profile/amolraut_638"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-darkCard border border-gray-800 rounded-lg hover:shadow-glow hover:border-primary transition duration-300 text-xs sm:text-sm"
-              >
-                <img
-                  src="/tuf.png"
-                  alt="TakeUforward"
-                  className="w-4 h-4 object-contain"
-                />
-                <span>takeUforward</span>
-              </a>
-
-              <a
-                href="https://drive.google.com/file/d/1TxuBqhGoetCeQtEIkmRT7O9ZkV-X1EZs/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 sm:px-5 py-2.5 bg-primary text-white rounded-lg hover:bg-accent transition duration-300 shadow-glow text-xs sm:text-sm"
-              >
-                <TiDocumentText />
-                Resume
-              </a>
-
+            <div className="w-px bg-gray-800" />
+            <div>
+              <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">15+</p>
+              <p className="text-[10px] sm:text-xs text-mutedText">Technologies Known</p>
             </div>
-          </motion.div>
+          </div>
 
-          {/* RIGHT IMAGE */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="flex-1 flex justify-center md:justify-end"
-          >
-            {/* Outer wrapper clips the badges so they never overflow the viewport */}
-            <div className="relative px-5 py-5">
+          {/* Buttons */}
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
 
-              {/* Glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 blur-2xl scale-110 pointer-events-none" />
+            <a href="https://www.linkedin.com/in/amolraut9272" target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 bg-darkCard border border-gray-800 rounded-lg hover:shadow-glow hover:border-primary transition duration-300 text-xs sm:text-sm">
+              <FaLinkedin className="text-primary" /> LinkedIn
+            </a>
 
-              {/* Image */}
-              <img
-                src="/desk.jpeg"
-                alt="Developer working illustration"
-                className="relative w-44 sm:w-56 md:w-[320px] lg:w-[360px] h-44 sm:h-56 md:h-[320px] lg:h-[360px] object-cover object-center rounded-2xl border border-gray-800 shadow-xl hover:scale-105 transition duration-500"
-              />
+            <a href="https://github.com/Amolraut638" target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 bg-darkCard border border-gray-800 rounded-lg hover:shadow-glow hover:border-primary transition duration-300 text-xs sm:text-sm">
+              <FaGithub className="text-primary" /> GitHub
+            </a>
 
-              {/* Badge 1 — Problems Solved */}
-              <div className="absolute bottom-0 left-0 bg-darkCard border border-gray-800 rounded-xl px-3 sm:px-4 py-2 shadow-lg">
-                <p className="text-[10px] sm:text-xs text-mutedText">Problems Solved</p>
-                <p className="text-base sm:text-lg font-bold text-primary">200+</p>
-              </div>
+            <a href="https://leetcode.com/u/Amolraut638/" target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 bg-darkCard border border-gray-800 rounded-lg hover:shadow-glow hover:border-primary transition duration-300 text-xs sm:text-sm">
+              <SiLeetcode className="text-primary" /> LeetCode
+            </a>
 
-              {/* Badge 2 — Projects Built */}
-              <div className="absolute top-0 right-0 bg-darkCard border border-gray-800 rounded-xl px-3 sm:px-4 py-2 shadow-lg">
-                <p className="text-[10px] sm:text-xs text-mutedText">Projects Built</p>
-                <p className="text-base sm:text-lg font-bold text-primary">6+</p>
-              </div>
+            <a href="https://takeuforward.org/profile/amolraut_638" target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 bg-darkCard border border-gray-800 rounded-lg hover:shadow-glow hover:border-primary transition duration-300 text-xs sm:text-sm">
+              <img src="/tuf.png" alt="TakeUforward" className="w-4 h-4 object-contain" />
+              takeUforward
+            </a>
 
-            </div>
-          </motion.div>
+            <a href="https://drive.google.com/file/d/1TxuBqhGoetCeQtEIkmRT7O9ZkV-X1EZs/view?usp=sharing" target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 bg-primary text-white rounded-lg hover:bg-accent transition duration-300 shadow-glow text-xs sm:text-sm">
+              <TiDocumentText /> Resume
+            </a>
 
-        </div>
+          </div>
+
+        </motion.div>
       </div>
     </section>
   );
