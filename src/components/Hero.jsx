@@ -125,7 +125,7 @@ export default function Hero() {
               takeUforward
             </a>
 
-            <a href="https://drive.google.com/file/d/1TxuBqhGoetCeQtEIkmRT7O9ZkV-X1EZs/view?usp=sharing" target="_blank" rel="noopener noreferrer"
+            <a href="https://drive.google.com/file/d/1Qx3PCmxcKuSI4ZmZ1OmHYTa-mtf4xrCa/view?usp=sharing" target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 sm:py-2.5 bg-primary text-white rounded-lg hover:bg-accent transition duration-300 shadow-glow text-xs sm:text-sm">
               <TiDocumentText /> Resume
             </a>
