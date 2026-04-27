@@ -3,6 +3,15 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const projects = [
+
+  {
+    name: "Olive frontend clone",
+    image: "/olive.png",
+    description:"Recreated a pixel-accurate landing page inspired by Olive as part of a frontend assessment using React and Vite. Focused on responsive design, smooth interactions, and clean UI implementation. Ensured a modern, mobile-friendly experience with attention to detail and performance.",
+    github: "https://github.com/Amolraut638/Olive-clone",
+    live: "https://olive-clone-hmi.vercel.app",
+    tech: ["React.js", "CSS", "Vite", "lucide-react", "framer-motion"],
+  },
   {
     name: "DsaMentor.ai",
     image: "/dsamentor.png",
