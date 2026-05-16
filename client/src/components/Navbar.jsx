@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { Link } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
@@ -29,7 +30,6 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close menu on resize to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) setMenuOpen(false);
@@ -38,18 +38,18 @@ function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Prevent body scroll when drawer is open
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
   const navItems = [
-    { name: "Home", to: "hero" },
-    { name: "About", to: "about" },
-    { name: "Journey", to: "journey" },
-    { name: "Skills", to: "skills" },
-    { name: "Projects", to: "projects" },
+    { name: "Home", to: "hero", type: "scroll" },
+    { name: "About", to: "about", type: "scroll" },
+    { name: "Journey", to: "journey", type: "scroll" },
+    { name: "Skills", to: "skills", type: "scroll" },
+    { name: "Projects", to: "projects", type: "scroll" },
+    { name: "Blogs", to: "/blogs", type: "link", isNew: true },
   ];
 
   return (
@@ -99,7 +99,7 @@ function Navbar() {
         </nav>
       </header>
 
-      {/* Drawer Overlay */}
+      {/* Drawer */}
       <AnimatePresence>
         {menuOpen && (
           <>
@@ -114,7 +114,7 @@ function Navbar() {
               onClick={() => setMenuOpen(false)}
             />
 
-            {/* Drawer */}
+            {/* Drawer Panel */}
             <motion.div
               key="drawer"
               initial={{ x: "100%" }}
@@ -142,33 +142,20 @@ function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.07 }}
                   >
-                    <Link
-                      to={item.to}
-                      smooth
-                      duration={500}
+                    <MobileNavItem
+                      {...item}
+                      isActive={activeSection === item.to}
                       onClick={() => setMenuOpen(false)}
-                    >
-                      <div className={`flex items-center gap-3 px-4 py-3 rounded-xl transition duration-200 cursor-pointer ${
-                        activeSection === item.to
-                          ? "bg-primary/10 text-primary"
-                          : "text-mutedText hover:text-lightText hover:bg-gray-800/50"
-                      }`}>
-                        {/* Active dot */}
-                        <span className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                          activeSection === item.to ? "bg-primary" : "bg-gray-700"
-                        }`} />
-                        <span className="text-base font-medium">{item.name}</span>
-                      </div>
-                    </Link>
+                    />
                   </motion.div>
                 ))}
               </div>
 
-              {/* Contact button at bottom of drawer */}
+              {/* Contact Button */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35 }}
+                transition={{ delay: 0.4 }}
               >
                 <Link
                   to="contact"
@@ -189,24 +176,85 @@ function Navbar() {
   );
 }
 
-/* Desktop Nav Item with animated underline */
-function NavItem({ name, to, isActive }) {
+/* Desktop Nav Item */
+function NavItem({ name, to, isActive, type, isNew }) {
+  const content = (
+    <div className="relative cursor-pointer py-1 group flex items-center gap-1.5">
+      <span className={`text-sm font-medium transition duration-300 ${
+        isActive ? "text-primary" : "text-mutedText hover:text-lightText"
+      }`}>
+        {name}
+      </span>
+
+      {/* NEW badge */}
+      {isNew && (
+        <span className="relative flex items-center">
+          <span className="text-[9px] font-black uppercase tracking-wider bg-gradient-to-r from-primary to-accent text-white px-1.5 py-0.5 rounded-full leading-none">
+            New
+          </span>
+          <span className="absolute -top-0.5 -right-0.5 flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+          </span>
+        </span>
+      )}
+
+      {/* Animated underline */}
+      <motion.div
+        className="absolute -bottom-0.5 left-0 h-[2px] bg-gradient-to-r from-primary to-accent rounded-full"
+        initial={false}
+        animate={{ width: isActive ? "100%" : "0%" }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+      />
+    </div>
+  );
+
+  if (type === "link") {
+    return <RouterLink to={to}>{content}</RouterLink>;
+  }
+
   return (
     <Link to={to} smooth duration={500}>
-      <div className="relative cursor-pointer py-1 group">
-        <span className={`text-sm font-medium transition duration-300 ${
-          isActive ? "text-primary" : "text-mutedText hover:text-lightText"
-        }`}>
-          {name}
-        </span>
-        {/* Animated underline */}
-        <motion.div
-          className="absolute -bottom-0.5 left-0 h-[2px] bg-gradient-to-r from-primary to-accent rounded-full"
-          initial={false}
-          animate={{ width: isActive ? "100%" : "0%" }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-        />
-      </div>
+      {content}
+    </Link>
+  );
+}
+
+/* Mobile Drawer Nav Item */
+function MobileNavItem({ name, to, type, isNew, isActive, onClick }) {
+  const content = (
+    <div className={`flex items-center gap-3 px-4 py-3 rounded-xl transition duration-200 cursor-pointer ${
+      isActive
+        ? "bg-primary/10 text-primary"
+        : "text-mutedText hover:text-lightText hover:bg-gray-800/50"
+    }`}>
+      <span className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+        isActive ? "bg-primary" : "bg-gray-700"
+      }`} />
+      <span className="text-base font-medium flex items-center gap-2">
+        {name}
+        {isNew && (
+          <span className="relative flex items-center gap-1">
+            <span className="text-[9px] font-black uppercase tracking-wider bg-gradient-to-r from-primary to-accent text-white px-1.5 py-0.5 rounded-full leading-none">
+              New
+            </span>
+            <span className="flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-primary opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
+            </span>
+          </span>
+        )}
+      </span>
+    </div>
+  );
+
+  if (type === "link") {
+    return <RouterLink to={to} onClick={onClick}>{content}</RouterLink>;
+  }
+
+  return (
+    <Link to={to} smooth duration={500} onClick={onClick}>
+      {content}
     </Link>
   );
 }
