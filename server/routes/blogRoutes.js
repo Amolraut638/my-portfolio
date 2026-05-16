@@ -1,5 +1,6 @@
 import express from "express";
 import multer from "multer";
+import { getAllBlogsAdmin } from "../controllers/blogController.js";
 
 import {
   getAllBlogs,
@@ -17,6 +18,7 @@ const upload = multer({ storage: multer.memoryStorage() });
 
 router.get("/", getAllBlogs);
 router.get("/:slug", getBlogBySlug);
+router.get("/admin/all", authMiddleware, getAllBlogsAdmin);
 
 router.post(
   "/",

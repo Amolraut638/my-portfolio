@@ -24,6 +24,18 @@ export const getBlogBySlug = async (req, res) => {
   }
 };
 
+// GET all blogs including drafts (admin only)
+export const getAllBlogsAdmin = async (req, res) => {
+  try {
+    const blogs = await Blog.find()
+      .sort({ createdAt: -1 })
+      .select("-content");
+    res.json(blogs);
+  } catch (error) {
+    res.status(500).json({ message: "Server error" });
+  }
+};
+
 // POST create blog
 export const createBlog = async (req, res) => {
   try {

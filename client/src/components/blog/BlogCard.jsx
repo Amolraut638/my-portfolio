@@ -47,6 +47,15 @@ export default function BlogCard({ blog, index }) {
         </div>
       </div>
 
+      {/* Draft badge */}
+      {!blog.published && (
+        <div className="absolute top-3 right-3 z-10">
+          <span className="text-[10px] font-black uppercase tracking-wider px-2 py-1 bg-yellow-500/20 border border-yellow-500/40 rounded-md text-yellow-400">
+            Draft
+          </span>
+        </div>
+      )}
+
       {/* Content */}
       <div className="p-4 sm:p-5 flex flex-col flex-1">
 
