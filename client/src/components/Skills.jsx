@@ -35,6 +35,10 @@ const skillCategories = [
       { name: "DSA", image: "/dsa.png" },
       { name: "VS Code", image: "/icons8-visual-studio-code-48.png" },
       { name: "Postman", image: "/icons8-postman-inc-48.png" },
+      { name: "Vercel", image: "/vercel.png" },
+      { name: "OpenAI", image: "/chatgpt.png" },
+      { name: "Antigravity", image: "/anti.jpg" },
+      { name: "System Design", image: "/system-design.jpg" },
     ],
   },
 ];
