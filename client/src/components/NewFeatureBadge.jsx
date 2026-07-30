@@ -156,7 +156,7 @@ export default function NewFeatureBadge() {
                 transition={{ duration: 0.2 }}
                 className="absolute -top-10 left-1/2 -translate-x-1/2 bg-darkCard border border-gray-700 text-lightText text-xs px-3 py-1.5 rounded-lg whitespace-nowrap shadow-lg"
               >
-                Click to read my blogs 📖
+                Click to read my blogs
                 <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-darkCard border-r border-b border-gray-700 rotate-45" />
               </motion.div>
             )}

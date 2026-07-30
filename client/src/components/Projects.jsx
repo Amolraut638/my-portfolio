@@ -5,6 +5,16 @@ import { motion } from "framer-motion";
 const projects = [
 
   {
+    name: "Hired.Ai",
+    image: "/hired-ai.png",
+    description:
+      "full-stack AI-powered interview preparation platform with role-specific question generation using Google Gemini API, voice interview mode via Web Speech API, and AI-driven answer evaluation with per-question scores and feedback.",
+    github: "https://github.com/Amolraut638/hired.ai",
+    live: "https://hiredaitwo.vercel.app/",
+    tech: ["React.js", "Node.js", "CSS", "Express.js", "MomngoDB", "Gemini AI", "Vercel", "lucide-react", "rate-limitor"],
+  },
+
+  {
     name: "Olive frontend clone",
     image: "/olive.png",
     description:"Recreated a pixel-accurate landing page inspired by Olive as part of a frontend assessment using React and Vite. Focused on responsive design, smooth interactions, and clean UI implementation. Ensured a modern, mobile-friendly experience with attention to detail and performance.",
@@ -12,6 +22,16 @@ const projects = [
     live: "https://olive-clone-hmi.vercel.app",
     tech: ["React.js", "CSS", "Vite", "lucide-react", "framer-motion"],
   },
+
+  {
+    name: "Airbnb listing page clone",
+    image: "/airbnb.png",
+    description:"Re-built a pixel perfect property listing page using React and Vite. Used lucide-react icons, Implemented desktop only design, smooth interactions, and clean UI implementation. Ensured a modern experience with attention to detail and performance.",
+    github: "https://airbnbclone-amol.vercel.app",
+    live: "https://airbnbclone-amol.vercel.app",
+    tech: ["React.js", "CSS", "Vite", "lucide-react"],
+  },
+
   {
     name: "DsaMentor.ai",
     image: "/dsamentor.png",
@@ -65,15 +85,6 @@ const projects = [
     github: "https://github.com/Amolraut638/my-portfolio",
     live: "https://amolraut.vercel.app",
     tech: ["React.js", "Tailwind CSS", "Framer Motion"],
-  },
-  {
-    name: "Bank Management System",
-    image: "/bankManagement.png",
-    description:
-      "A C++ console application simulating core banking operations using OOP principles and file handling for secure customer data management.",
-    github: "https://github.com/Amolraut638/BankManagementSystem",
-    live: "https://github.com/Amolraut638/BankManagementSystem",
-    tech: ["C++", "OOP", "File Handling"],
   },
 ];
 
