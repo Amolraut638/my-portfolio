@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiMail, FiPhone, FiMapPin, FiSend } from "react-icons/fi";
+import emailjs from "@emailjs/browser";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -37,23 +38,17 @@ function Contact() {
     setIsSending(true);
     setStatus(null);
 
-    const data = {
-      service_id: import.meta.env.VITE_SERVICE_ID,
-      template_id: import.meta.env.VITE_TEMPLATE_ID,
-      user_id: import.meta.env.VITE_PUBLIC_KEY,
-      template_params: { ...formData },
-    };
-
     try {
-      const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!response.ok) throw new Error("Failed");
-      setStatus("success");
+      await emailjs.send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        { ...formData },
+        import.meta.env.VITE_PUBLIC_KEY
+      );
+      setStatus("success"); 
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {
+      console.error(err);
       setStatus("error");
     } finally {
       setIsSending(false);

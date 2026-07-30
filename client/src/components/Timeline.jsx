@@ -8,7 +8,7 @@ const educationData = [
     title: "B.E in Electronics and Telecommunication",
     details: "Dr. D.Y. Patil Institute of Engineering Management and Research, Akurdi.",
     description:
-      "CGPA: 7.78 | Demonstrated strong engineering fundamentals and problem-solving ability through real-world project development.",
+      "CGPA: 7.85 | Demonstrated strong engineering fundamentals and problem-solving ability through real-world project development.",
   },
   {
     year: "2019 - 2020",
