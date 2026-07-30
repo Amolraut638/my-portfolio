@@ -97,14 +97,14 @@ export default function AboutMe() {
             <div className="bg-darkCard border border-gray-800 rounded-2xl p-6 sm:p-8 md:p-10">
 
               <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4 sm:mb-6">
-                Backend-focused Developer building{" "}
+                Backend-focused Full Stack Developer building{" "}
                 <span className="text-primary">scalable systems</span>
               </h3>
 
               <div className="space-y-4 sm:space-y-5 text-mutedText leading-relaxed text-sm sm:text-base">
 
                 <p>
-                  I'm currently pursuing a B.E. in Electronics and Telecommunication (2026), with a strong focus on backend and full-stack development. I've built my skills through hands-on projects and consistent problem solving.
+                  Recent B.E. graduate  in Electronics and Telecommunication (2026), with a strong focus on backend and full-stack development. I've built my skills through hands-on projects and consistent problem solving.
                 </p>
 
                 <p>
@@ -121,7 +121,7 @@ export default function AboutMe() {
                     Some things I've built:
                   </p>
                   <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm">
-                    <li>• AI-powered DSA mentor with guided problem solving</li>
+                    <li>• Hired.AI - An AI-powered interview platform </li>
                     <li>• Movie insight platform with real-time sentiment analysis</li>
                     <li>• ATS-friendly resume generator using AI</li>
                     <li>• Scalable URL shortener with caching & encoding</li>
