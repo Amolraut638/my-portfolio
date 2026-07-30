@@ -15,6 +15,36 @@ const projects = [
   },
 
   {
+    name: "Resume-Builder",
+    image: "/resumeBuilder.png",
+    description:
+      "An intelligent web application that helps users generate professional, ATS-friendly resumes instantly using AI and job description matching.",
+    github: "https://github.com/Amolraut638/Resume-Builder",
+    live: "https://resume-builder-amol-raut.vercel.app",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
+  },
+
+  {
+    name: "QuickBlog",
+    image: "/QuickBlog.png",
+    description:
+      "Modern blogging platform with AI content generation via Gemini API. Features include JWT authentication and a full MERN stack architecture.",
+    github: "https://github.com/Amolraut638/QuickBlog",
+    live: "https://quick-blog-638.vercel.app",
+    tech: ["React.js", "MongoDB", "Gemini API", "JWT"],
+  },
+
+  {
+    name: "My Portfolio Website",
+    image: "/portfolio.png",
+    description:
+      "A modern, responsive developer portfolio featuring glassmorphism, Framer Motion animations, and a clean UI/UX designed to showcase technical expertise and project work.",
+    github: "https://github.com/Amolraut638/my-portfolio",
+    live: "https://amolraut.vercel.app",
+    tech: ["React.js", "Tailwind CSS", "Framer Motion"],
+  },
+
+  {
     name: "Olive frontend clone",
     image: "/olive.png",
     description:"Recreated a pixel-accurate landing page inspired by Olive as part of a frontend assessment using React and Vite. Focused on responsive design, smooth interactions, and clean UI implementation. Ensured a modern, mobile-friendly experience with attention to detail and performance.",
@@ -50,15 +80,7 @@ const projects = [
     live: "https://ai-movie-insight-builder-tau.vercel.app",
     tech: ["Next.js", "React", "TMDB API", "Groq AI"],
   },
-  {
-    name: "Resume-Builder",
-    image: "/resumeBuilder.png",
-    description:
-      "An intelligent web application that helps users generate professional, ATS-friendly resumes instantly using AI and job description matching.",
-    github: "https://github.com/Amolraut638/Resume-Builder",
-    live: "https://resume-builder-amol-raut.vercel.app",
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
-  },
+
   {
     name: "URL-Shortener",
     image: "/url-shortener.png",
@@ -68,24 +90,7 @@ const projects = [
     live: "https://github.com/Amolraut638/url-shortener",
     tech: ["React.js", "Node.js", "PostgreSQL", "Redis"],
   },
-  {
-    name: "QuickBlog",
-    image: "/QuickBlog.png",
-    description:
-      "Modern blogging platform with AI content generation via Gemini API. Features include JWT authentication and a full MERN stack architecture.",
-    github: "https://github.com/Amolraut638/QuickBlog",
-    live: "https://quick-blog-638.vercel.app",
-    tech: ["React.js", "MongoDB", "Gemini API", "JWT"],
-  },
-  {
-    name: "My Portfolio Website",
-    image: "/portfolio.png",
-    description:
-      "A modern, responsive developer portfolio featuring glassmorphism, Framer Motion animations, and a clean UI/UX designed to showcase technical expertise and project work.",
-    github: "https://github.com/Amolraut638/my-portfolio",
-    live: "https://amolraut.vercel.app",
-    tech: ["React.js", "Tailwind CSS", "Framer Motion"],
-  },
+
 ];
 
 const fadeUp = {
