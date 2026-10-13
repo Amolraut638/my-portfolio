@@ -57,8 +57,8 @@ const projects = [
     name: "Airbnb listing page clone",
     image: "/airbnb.png",
     description:"Re-built a pixel perfect property listing page using React and Vite. Used lucide-react icons, Implemented desktop only design, smooth interactions, and clean UI implementation. Ensured a modern experience with attention to detail and performance.",
-    github: "https://airbnbclone-amol.vercel.app",
-    live: "https://airbnbclone-amol.vercel.app",
+    github: "https://github.com/Amolraut638/playpower-assignment-task",
+    live: "https://airbnb-listing-playpowerlabs.vercel.app",
     tech: ["React.js", "CSS", "Vite", "lucide-react"],
   },
 
