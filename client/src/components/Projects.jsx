@@ -83,11 +83,11 @@ const projects = [
 
   {
     name: "URL-Shortener",
-    image: "/url-shortener.png",
+    image: "/zipurl.png",
     description:
       "Full-stack system converting long URLs into short links using Base62 encoding. Utilizes PostgreSQL for storage and Redis for high-speed redirects.",
     github: "https://github.com/Amolraut638/url-shortener",
-    live: "https://github.com/Amolraut638/url-shortener",
+    live: "https://zipurl1.vercel.app",
     tech: ["React.js", "Node.js", "PostgreSQL", "Redis"],
   },
 
